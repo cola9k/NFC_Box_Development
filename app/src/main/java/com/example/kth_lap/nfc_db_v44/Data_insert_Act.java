@@ -32,46 +32,22 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
     private Uri mImageCaptureUri;
     private ImageView iv_UserPhoto;
     private int id_view;
-    private String absolutePaht;
+    private String absolutePath;
 
+    DBContactHelper db;
 
+    EditText edit_content = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.insert_activity);
+        db = new DBContactHelper(this);
 
-        DBContactHelper db = new DBContactHelper(this);
-
-
-        /**
-         * CRUD Operations
-         * */
-        // 샘플데이타 넣기
-        Log.d("Insert: ", "Inserting ..");
-//        db.addContact(new Contact("Ravi", "9100000000"));
-//        db.addContact(new Contact("Srinivas", "9199999999"));
-//        db.addContact(new Contact("Tommy", "9522222222"));
-//        db.addContact(new Contact("Karthik", "9533333333"));
-
-        // 집어넣은 데이타 다시 읽어들이기
-        Log.d("Reading: ", "Reading all contacts..");
-        List<Contact> contacts = db.getAllContacts();
-
-        for (Contact cn : contacts) {
-            String log = "Id: " + cn.getID() + " ,Name: " + cn.getName() + " ,Phone: " + cn.getPhoneNumber();
-            Log.d("Name: ", log);
-            if (cn.getID() == 1)
-                db.deleteContact(cn);
-            if (cn.getID() == 2)
-                db.updateContact(cn);
-        }
-
-
+        /*Cotent 입력 부분*/
+        edit_content = (EditText) findViewById(R.id.input_txt);
 
         /*nfc 스캔 부분*/
         TextView blank_txt = (TextView) findViewById(R.id.blank_txt);
-
-
 
         /*사진 선택 부분*/
         iv_UserPhoto = (ImageView) findViewById(R.id.imageView);
@@ -164,8 +140,8 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
                 intent.setDataAndType(mImageCaptureUri, "image/*");
 
                 // 크롭 크기 지정
-                intent.putExtra("outputX", 8000); //이미지 x,y축
-                intent.putExtra("outputy", 1000);
+                intent.putExtra("outputX", 1000); //이미지 x,y축
+                intent.putExtra("outputY", 1000);
                 intent.putExtra("aspectX", 1000); // crop 박스 x,y 축
                 intent.putExtra("aspectX", 1000);
                 intent.putExtra("scale", true);
@@ -185,7 +161,7 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
                     Bitmap photo = extras.getParcelable("data"); // 크롭된 bitmap
                     iv_UserPhoto.setImageBitmap(photo); // 레이아웃의 이미칸에 crop된 bitmap을 보여줌
                     storeCropImage(photo, filePath); // crop된 이미지를 외부저장소, 앨범에 저장
-                    absolutePaht = filePath;
+                    absolutePath = filePath;
                     break;
                 }
                 // 임시 파일 삭제
@@ -224,9 +200,12 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.add_btn:
-                /*Cotent 입력 부분*/
-                EditText edit_content = (EditText) findViewById(R.id.input_txt);
-
+                Log.d("Insert: ", "Inserting ..");
+                Log.d("텍스트 입력 확인 : ",edit_content.getText().toString());
+                db.addContact(new Contact(edit_content.getText().toString()));
+                Intent main_intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(main_intent);
+                finish();
         }
     }
 }
