@@ -32,7 +32,7 @@
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/NFC_txt"
+            android:id="@+id/s_NFC_txt"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textStyle="normal|bold"
             android:layout_alignTop="@+id/input_txt"
@@ -44,7 +44,7 @@
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/blank_txt"
+            android:id="@+id/s_blank_txt"
             android:layout_alignTop="@+id/input_txt"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -54,7 +54,7 @@
             android:text="NFC"
             android:layout_width="66dp"
             android:layout_height="45dp"
-            android:id="@+id/nfc_scan_btn"
+            android:id="@+id/s_nfc_scan_btn"
             android:scaleType="centerInside"
             android:background="#00000000"
             android:src="@drawable/nfc"
@@ -77,13 +77,15 @@
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/content_txt"
+            android:id="@+id/s_content_txt"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textStyle="normal|bold"
             android:layout_alignTop="@+id/input_txt"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            />
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="wrap_content"
@@ -95,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/input_txt"
+                android:id="@+id/s_input_txt"
                 android:hint="Input Content ..."
                 android:textStyle="normal|italic"
                 android:layout_below="@+id/view"
@@ -120,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:id="@+id/add_btn"
+            android:id="@+id/modify_btn"
             android:paddingTop="5sp"
             android:scaleType="centerInside"
             android:background="#00000000"
@@ -132,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
-            android:id="@+id/cancel_btn"
+            android:id="@+id/delete_btn"
             android:paddingTop="5sp"
             android:scaleType="centerInside"
             android:background="#00000000"
@@ -157,7 +159,7 @@
             android:text="Picture Choice"
             android:layout_width="83dp"
             android:layout_height="55dp"
-            android:id="@+id/picture_btn"
+            android:id="@+id/s_picture_btn"
             android:paddingTop="5sp"
             android:scaleType="centerInside"
             android:background="#00000000"
@@ -167,7 +169,7 @@
             android:text="ReChoice"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/textView"
+            android:id="@+id/s_textView"
             android:layout_weight="1"
             android:layout_marginTop="15dp"
             android:textSize="24sp" />
@@ -177,7 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/totoro"
-            android:id="@+id/imageView" />
+            android:id="@+id/s_imageView" />
 
     </LinearLayout>
 

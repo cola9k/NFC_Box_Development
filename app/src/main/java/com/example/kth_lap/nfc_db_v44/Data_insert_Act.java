@@ -34,6 +34,7 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
     private ImageView iv_UserPhoto;
     private int id_view;
     private String absolutePath;
+    String filePath;
 
     DBContactHelper db;
 
@@ -156,7 +157,7 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
 
                 final Bundle extras = data.getExtras();
                 // crop 된 이미지 저장 경로
-                String filePath = Environment.getExternalStorageDirectory().getAbsolutePath() +
+                filePath = Environment.getExternalStorageDirectory().getAbsolutePath() +
                         "/NFC_box/" + System.currentTimeMillis() + ".jpg";
                 if (extras != null) {
                     Bitmap photo = extras.getParcelable("data"); // 크롭된 bitmap
@@ -203,10 +204,20 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
             case R.id.add_btn:
                 Log.d("Insert: ", "Inserting ..");
                 Log.d("텍스트 입력 확인 : ",edit_content.getText().toString());
-                db.addContact(new Contact(edit_content.getText().toString()));
+                db.addContact(new Contact(edit_content.getText().toString(),filePath.toString()));
                 Intent main_intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(main_intent);
                 finish();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

@@ -26,6 +26,8 @@ public class DBContactHelper extends SQLiteOpenHelper{
     // Contacts Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_CONTENT = "content";
+    private static final String KEY_IMGPATH = "imgpath";
+
     public DBContactHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -33,7 +35,8 @@ public class DBContactHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_CONTENT + " TEXT)";
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_CONTENT + " TEXT, " +
+                KEY_IMGPATH+ " TEXT)";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
@@ -54,7 +57,8 @@ public class DBContactHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_CONTENT, contact.getContent()); // Contact Name
+        values.put(KEY_CONTENT, contact.getContent()); // Contact content
+        values.put(KEY_IMGPATH, contact.getImgPath()); // Contact imgpath
 
         // Inserting Row
         db.insert(TABLE_CONTACTS, null, values);
@@ -66,13 +70,13 @@ public class DBContactHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-                        KEY_CONTENT }, KEY_ID + "=?",
+                        KEY_CONTENT, KEY_IMGPATH }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
         Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1));
+                cursor.getString(1), cursor.getString(2));
         // return contact
         return contact;
     }
@@ -92,6 +96,7 @@ public class DBContactHelper extends SQLiteOpenHelper{
                 Contact contact = new Contact();
                 contact.setID(Integer.parseInt(cursor.getString(0)));
                 contact.setContent(cursor.getString(1));
+                contact.setImgPath(cursor.getString(2));
                 // Adding contact to list
                 contactList.add(contact);
             } while (cursor.moveToNext());

@@ -8,18 +8,21 @@ public class Contact {
 
     int id;
     String content;
+    String imgPath;
 
     public Contact() {
 
     }
 
-    public Contact(int id, String content) {
+    public Contact(int id, String content,String imgPath) {
         this.id = id;
         this.content = content;
+        this.imgPath = imgPath;
     }
 
-    public Contact(String content) {
+    public Contact(String content,String imgPath) {
         this.content = content;
+        this.imgPath = imgPath;
     }
 
     public int getID() {
@@ -36,5 +39,13 @@ public class Contact {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getImgPath() {
+        return this.imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 }
