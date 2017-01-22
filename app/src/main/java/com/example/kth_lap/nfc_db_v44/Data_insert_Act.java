@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,7 +52,7 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
 
         /*사진 선택 부분*/
         iv_UserPhoto = (ImageView) findViewById(R.id.imageView);
-        Button choice_photo = (Button) findViewById(R.id.picture_btn);
+        ImageButton choice_photo = (ImageButton) findViewById(R.id.picture_btn);
         choice_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,11 +60,11 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
             }
         });
         // 데이터 입력
-        Button add = (Button) findViewById(R.id.add_btn);
+        ImageButton add = (ImageButton) findViewById(R.id.add_btn);
         add.setOnClickListener(this);
 
         // 액티비티 취소
-        Button canel = (Button) findViewById(R.id.cancel_btn);
+        ImageButton canel = (ImageButton) findViewById(R.id.cancel_btn);
         canel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

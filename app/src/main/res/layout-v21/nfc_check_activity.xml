@@ -90,19 +90,19 @@
             android:layout_height="92dp"
             tools:context=".NestedScrollViewActivity"
             android:layout_weight="12.02">
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/input_txt"
-            android:hint="Input Content ..."
-            android:textStyle="normal|italic"
-            android:layout_below="@+id/view"
-            android:layout_toRightOf="@+id/content_txt_check"
-            android:layout_toEndOf="@+id/content_txt_check"
-            android:layout_weight="33.42"
-            android:textColor="?android:attr/textColorTertiary" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/input_txt"
+                android:hint="Input Content ..."
+                android:textStyle="normal|italic"
+                android:layout_below="@+id/view"
+                android:layout_toRightOf="@+id/content_txt_check"
+                android:layout_toEndOf="@+id/content_txt_check"
+                android:layout_weight="33.42"
+                android:textColor="?android:attr/textColorTertiary" />
         </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 
@@ -124,7 +124,7 @@
             android:paddingTop="5sp"
             android:scaleType="centerInside"
             android:background="#00000000"
-            android:src="@drawable/plus"
+            android:src="@drawable/success"
             android:elevation="0dp" />
 
         <ImageButton
@@ -136,7 +136,7 @@
             android:paddingTop="5sp"
             android:scaleType="centerInside"
             android:background="#00000000"
-            android:src="@drawable/error"
+            android:src="@drawable/delete"
             android:elevation="0dp" />
     </LinearLayout>
 
@@ -149,36 +149,34 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:text="Picture Choice"
-                android:layout_width="76dp"
-                android:layout_height="55dp"
-                android:id="@+id/picture_btn"
-                android:paddingTop="5sp"
-                android:scaleType="centerInside"
-                android:background="#00000000"
-                android:src="@drawable/photo"
-                android:elevation="0dp" />
-
-            <TextView
-                android:text="Photo"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/textView"
-                android:layout_weight="1"
-                android:layout_marginTop="15dp"
-                android:textSize="24sp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:text="Picture Choice"
+            android:layout_width="83dp"
+            android:layout_height="55dp"
+            android:id="@+id/picture_btn"
+            android:paddingTop="5sp"
+            android:scaleType="centerInside"
+            android:background="#00000000"
+            android:src="@drawable/photo"
+            android:elevation="0dp"/>
+        <TextView
+            android:text="ReChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp" />
         </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:srcCompat="@mipmap/ic_launcher"
+            android:src="@drawable/totoro"
             android:id="@+id/imageView" />
 
     </LinearLayout>

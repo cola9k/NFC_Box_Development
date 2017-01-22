@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.List;
 
@@ -18,9 +19,9 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        Button picture = (Button) findViewById(R.id.pic_btn);
-        Button register = (Button) findViewById(R.id.reg_btn);
-        Button main_nfc = (Button) findViewById(R.id.nfc_btn);
+        ImageButton picture = (ImageButton) findViewById(R.id.pic_btn);
+        ImageButton register = (ImageButton) findViewById(R.id.reg_btn);
+        ImageButton main_nfc = (ImageButton) findViewById(R.id.nfc_btn);
         picture.setOnClickListener(this);
         register.setOnClickListener(this);
         main_nfc.setOnClickListener(this);

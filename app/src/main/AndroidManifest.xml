@@ -18,6 +18,7 @@
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <activity android:name=".Data_insert_Act"></activity>
         <activity android:name=".NFC_Check_Act"></activity>
+        <activity android:name=".Photo_Act"></activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

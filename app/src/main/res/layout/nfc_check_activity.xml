@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="1">
+
     <View
         android:id="@+id/view"
         android:layout_width="fill_parent"
@@ -12,136 +14,141 @@
         android:background="@color/colorPrimaryDark" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
-        >
+        android:orientation="horizontal">
 
         <TextView
-            android:text="NFC Code : "
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/NFC_txt_check"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textStyle="normal|bold"
-            android:layout_alignTop="@+id/input_txt"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:text="Blank"
-            android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/blanck_check"
-            android:layout_alignTop="@+id/input_txt"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_weight="0.99"/>
+            android:layout_alignTop="@+id/input_txt"
+            android:text="NFC Code : "
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20dp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/blanck_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/input_txt"
+            android:layout_weight="0.99"
+            android:text="Blank"
+            android:textSize="18sp" />
 
         <Button
-            android:text="NFC"
+            android:id="@+id/nfc_scan_btn_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nfc_scan_btn_check" />
+            android:text="NFC" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/view"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout"
-        android:layout_weight="0.52"
+        android:layout_below="@+id/view"
         android:layout_marginLeft="10dp"
-        >
+        android:layout_weight="0.52"
+        android:orientation="horizontal">
 
         <TextView
-            android:text="Content     :"
-            android:textSize="20dp"
+            android:id="@+id/content_txt_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/content_txt_check"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textStyle="normal|bold"
-            android:layout_alignTop="@+id/input_txt"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_weight="1" />
+            android:layout_alignTop="@+id/input_txt"
+            android:layout_weight="1"
+            android:text="Content     :"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20dp"
+            android:textStyle="normal|bold" />
 
-        <EditText
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/input_txt_check"
-            android:hint="Input Content ..."
-            android:textStyle="normal|italic"
-            android:textColor="?attr/colorButtonNormal"
-            android:layout_below="@+id/view"
-            android:layout_toRightOf="@+id/content_txt_check"
-            android:layout_toEndOf="@+id/content_txt_check"
-            android:layout_weight="33.42" />
+            android:layout_height="92dp"
+            android:layout_weight="12.02"
+            tools:context=".NestedScrollViewActivity">
+
+            <EditText
+                android:id="@+id/input_txt_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:layout_toEndOf="@+id/content_txt_check"
+                android:layout_toRightOf="@+id/content_txt_check"
+                android:layout_weight="33.42"
+                android:ems="10"
+                android:hint="Input Content ..."
+                android:inputType="textMultiLine"
+                android:textColor="?android:attr/colorEdgeEffect"
+                android:textStyle="normal|italic" />
+        </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:id="@+id/linearLayout2"
-        android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_weight="0.42"
+        android:layout_below="@+id/linearLayout"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="0.42"
+        android:orientation="vertical"
         android:weightSum="1">
 
         <Button
-            android:text="Picture Choice"
+            android:id="@+id/picture_btn_check"
             android:layout_width="137dp"
             android:layout_height="wrap_content"
-            android:id="@+id/picture_btn_check" />
+            android:text="Picture Choice" />
 
         <ImageView
+            android:id="@+id/imageView_check"
             android:layout_width="match_parent"
             android:layout_height="128dp"
-            android:id="@+id/imageView_check"
-            android:src="@drawable/totoro"
-            android:layout_weight="0.75" />
+            android:layout_weight="0.75"
+            android:src="@drawable/totoro" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal">
 
         <Button
-            android:text="modify"
+            android:id="@+id/modi_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
-            android:id="@+id/modi_btn" />
+            android:text="modify" />
 
         <Button
-            android:text="delete"
+            android:id="@+id/delete_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
 
-            android:id="@+id/delete_btn" />
+            android:text="delete" />
     </LinearLayout>
 </LinearLayout>
