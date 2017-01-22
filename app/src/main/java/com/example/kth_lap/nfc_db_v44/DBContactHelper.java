@@ -25,9 +25,7 @@ public class DBContactHelper extends SQLiteOpenHelper{
 
     // Contacts Table Columns names
     private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "name";
-    private static final String KEY_PH_NO = "phone_number";
-
+    private static final String KEY_CONTENT = "content";
     public DBContactHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -35,8 +33,7 @@ public class DBContactHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_PH_NO + " TEXT" + ")";
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_CONTENT + " TEXT)";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
@@ -57,8 +54,7 @@ public class DBContactHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, contact.getName()); // Contact Name
-        values.put(KEY_PH_NO, contact.getPhoneNumber()); // Contact Phone
+        values.put(KEY_CONTENT, contact.getContent()); // Contact Name
 
         // Inserting Row
         db.insert(TABLE_CONTACTS, null, values);
@@ -70,13 +66,13 @@ public class DBContactHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-                        KEY_NAME, KEY_PH_NO }, KEY_ID + "=?",
+                        KEY_CONTENT }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
         Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
+                cursor.getString(1));
         // return contact
         return contact;
     }
@@ -95,8 +91,7 @@ public class DBContactHelper extends SQLiteOpenHelper{
             do {
                 Contact contact = new Contact();
                 contact.setID(Integer.parseInt(cursor.getString(0)));
-                contact.setName(cursor.getString(1));
-                contact.setPhoneNumber(cursor.getString(2));
+                contact.setContent(cursor.getString(1));
                 // Adding contact to list
                 contactList.add(contact);
             } while (cursor.moveToNext());
@@ -111,8 +106,7 @@ public class DBContactHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, contact.getName());
-        values.put(KEY_PH_NO, contact.getPhoneNumber());
+        values.put(KEY_CONTENT, contact.getContent());
 
         // updating row
         return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",

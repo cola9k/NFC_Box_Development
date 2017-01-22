@@ -89,7 +89,7 @@
             android:id="@+id/input_txt"
             android:hint="Input Content ..."
             android:textStyle="normal|italic"
-            android:textColor="?attr/colorButtonNormal"
+            android:textColor="?attr/colorControlHighlight"
             android:layout_below="@+id/view"
             android:layout_toRightOf="@+id/content_txt_check"
             android:layout_toEndOf="@+id/content_txt_check"

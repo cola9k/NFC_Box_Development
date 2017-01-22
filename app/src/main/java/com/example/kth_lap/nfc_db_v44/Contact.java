@@ -7,44 +7,34 @@ package com.example.kth_lap.nfc_db_v44;
 public class Contact {
 
     int id;
-    String name;
-    String phone_number;
+    String content;
 
-    public Contact(){
+    public Contact() {
 
     }
-    public Contact(int id, String name, String phone_number){
+
+    public Contact(int id, String content) {
         this.id = id;
-        this.name = name;
-        this.phone_number = phone_number;
+        this.content = content;
     }
 
-    public Contact(String name, String phone_number){
-        this.name = name;
-        this.phone_number = phone_number;
+    public Contact(String content) {
+        this.content = content;
     }
 
-    public int getID(){
+    public int getID() {
         return this.id;
     }
 
-    public void setID(int id){
+    public void setID(int id) {
         this.id = id;
     }
 
-    public String getName(){
-        return this.name;
+    public String getContent() {
+        return this.content;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String getPhoneNumber(){
-        return this.phone_number;
-    }
-
-    public void setPhoneNumber(String phone_number){
-        this.phone_number = phone_number;
+    public void setContent(String content) {
+        this.content = content;
     }
 }
