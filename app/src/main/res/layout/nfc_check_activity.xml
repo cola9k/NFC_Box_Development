@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <View
+        android:id="@+id/view"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        >
+
+        <TextView
+            android:text="NFC Code : "
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/NFC_txt_check"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textStyle="normal|bold"
+            android:layout_alignTop="@+id/input_txt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="Blank"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/blanck_check"
+            android:layout_alignTop="@+id/input_txt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.99"/>
+
+        <Button
+            android:text="NFC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nfc_scan_btn_check" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout"
+        android:layout_weight="0.52"
+        android:layout_marginLeft="10dp"
+        >
+
+        <TextView
+            android:text="Content     :"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/content_txt_check"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textStyle="normal|bold"
+            android:layout_alignTop="@+id/input_txt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/input_txt_check"
+            android:hint="Input Content ..."
+            android:textStyle="normal|italic"
+            android:textColor="?attr/colorButtonNormal"
+            android:layout_below="@+id/view"
+            android:layout_toRightOf="@+id/content_txt_check"
+            android:layout_toEndOf="@+id/content_txt_check"
+            android:layout_weight="33.42" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="0.42"
+        android:layout_marginLeft="10dp"
+        android:weightSum="1">
+
+        <Button
+            android:text="Picture Choice"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/picture_btn_check" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:id="@+id/imageView_check"
+            android:src="@drawable/totoro"
+            android:layout_weight="0.75" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/modi_btn" />
+
+        <Button
+            android:text="delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+
+            android:id="@+id/delete_btn" />
+    </LinearLayout>
+</LinearLayout>
