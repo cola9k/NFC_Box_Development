@@ -66,4 +66,13 @@ public class NFC_Check_Act extends AppCompatActivity implements View.OnClickList
                 finish();
         }
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

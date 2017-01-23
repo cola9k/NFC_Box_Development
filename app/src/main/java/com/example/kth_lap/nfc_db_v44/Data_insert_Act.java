@@ -211,6 +211,7 @@ public class Data_insert_Act extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    /*Github 4차 commit test*/
     @Override
     protected void onDestroy() {
         super.onDestroy();
