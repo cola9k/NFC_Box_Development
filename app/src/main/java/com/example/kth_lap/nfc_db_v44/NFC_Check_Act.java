@@ -19,7 +19,7 @@ public class NFC_Check_Act extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nfc_check_activity);
+        setContentView(R.layout.n_nfc_check_activity);
 
         db = new DBContactHelper(this);
 
